@@ -1,12 +1,25 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
+import {StackNavigator} from 'react-navigation';
+import HomeScreen from './screens/HomeScreen';
+import DetailsScreen from './screens/DetailsScreen';
+
+const RootStack = StackNavigator({
+  Home:{
+    screen: HomeScreen,
+  },
+
+  Details:{
+    screen : DetailsScreen,
+  },
+  initialRouteName : HomeScreen,
+});
+
 export default class App extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <RootStack/>
     );
   }
 }
